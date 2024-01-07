@@ -13,9 +13,8 @@ LaravelとLivewireの勉強をするぜえ。
 ## DB
 - todos
   - id(int)
-  - user_id(uuid)
+  - user_id(int)
   - title(string)
-  - description(string) null ok
   - is_completed(bool)
   - priority(int)
   - image(string) null ok

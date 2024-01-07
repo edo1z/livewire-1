@@ -8,12 +8,12 @@
     </div>
     <div>
         @foreach ($todos as $todo)
-        <div wire:key="{{ $todo }}" class="flex justify-between items-center border-b-2">
-            <div>{{ $todo }}</div>
+        <div wire:key="{{ $todo->id }}" class="flex justify-between items-center border-b-2">
+            <div>{{ $todo->title }}</div>
             <div class="flex space-x-2 py-2">
                 <button class="btn btn-primary">編集</button>
                 <button class="btn btn-primary">完了</button>
-                <button class="btn btn-primary">削除</button>
+                <button class="btn btn-primary" wire:click="delete({{ $todo->id }})">削除</button>
             </div>
         </div>
         @endforeach
