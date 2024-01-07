@@ -1,10 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Livewire\Register;
-use App\Livewire\Login;
-use App\Livewire\Password;
-use App\Livewire\Todos;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +13,14 @@ use App\Livewire\Todos;
 |
 */
 
-Route::get('/', Todos::class);
-Route::get('/register', Register::class);
-Route::get('/login', Login::class);
-Route::get('/password', Password::class);
+Route::view('/', 'welcome');
+
+Route::view('dashboard', 'dashboard')
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
+
+Route::view('profile', 'profile')
+    ->middleware(['auth'])
+    ->name('profile');
+
+require __DIR__.'/auth.php';
