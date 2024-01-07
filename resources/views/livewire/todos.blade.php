@@ -1,13 +1,4 @@
-<?php
-
-use function Livewire\Volt\{state};
-
-//
-
-?>
-
 <div>
-    TODOS
-
+    <h2>TODO</h2>
     <button class="btn btn-primary">ADD</button>
 </div>
