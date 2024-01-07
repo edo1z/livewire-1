@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Register;
+use App\Livewire\Login;
+use App\Livewire\Password;
 use App\Livewire\Todos;
 
 /*
@@ -15,3 +18,6 @@ use App\Livewire\Todos;
 */
 
 Route::get('/', Todos::class);
+Route::get('/register', Register::class);
+Route::get('/login', Login::class);
+Route::get('/password', Password::class);
