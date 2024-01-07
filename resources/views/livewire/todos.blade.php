@@ -3,7 +3,7 @@
     <div class="mt-10 flex space-x-3">
         <form wire:submit.prevent="add">
             <input type="text" wire:model="title" class="input input-bordered">
-            <button class="btn btn-primary">ADD</button>
+            <button class="btn btn-primary">追加</button>
         </form>
     </div>
     <div>
