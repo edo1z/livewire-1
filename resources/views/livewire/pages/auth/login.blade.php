@@ -3,30 +3,28 @@
 use App\Livewire\Forms\LoginForm;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Session;
-use Livewire\Attributes\Layout;
-use Livewire\Volt\Component;
 
-new #[Layout('layouts.guest')] class extends Component
-{
-    public LoginForm $form;
+use function Livewire\Volt\form;
+use function Livewire\Volt\layout;
 
-    /**
-     * Handle an incoming authentication request.
-     */
-    public function login(): void
-    {
-        $this->validate();
+layout('layouts.guest');
 
-        $this->form->authenticate();
+form(LoginForm::class);
 
-        Session::regenerate();
+$login = function () {
+    $this->validate();
 
-        $this->redirect(
-            session('url.intended', RouteServiceProvider::HOME),
-            navigate: true
-        );
-    }
-}; ?>
+    $this->form->authenticate();
+
+    Session::regenerate();
+
+    $this->redirect(
+        session('url.intended', RouteServiceProvider::HOME),
+        navigate: true
+    );
+};
+
+?>
 
 <div>
     <!-- Session Status -->
